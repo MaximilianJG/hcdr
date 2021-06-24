@@ -10,7 +10,7 @@ class Data:
                                "credit_card_balance", "previous_application", "installments_payments"], 
                        nrows=1_000):
         """Returns dict of dfs with the first # of rows specified"""
-        root_dir = Path(__file__).parents[2]
+        root_dir = "/content/drive/MyDrive/Colab Notebooks/hcdr"
         df_dict = {}
         
         for table in tables: 
@@ -58,9 +58,10 @@ class Data:
             print("optimized size by {} % | {} GB".format(ratio, GB))
         return df
     
-    def get_data(self, root_dir = Path(__file__).parents[2], tables=["application_train", "application_test", "bureau", "bureau_balance", "POS_CASH_balance", 
+    def get_data(self, tables=["application_train", "application_test", "bureau", "bureau_balance", "POS_CASH_balance", 
                                "credit_card_balance", "previous_application", "installments_payments"], nrows=None):
         
+        root_dir = "/content/drive/MyDrive/Colab Notebooks/hcdr"
         dict_dict_dtypes = self.map_dtype_cols()
 
         df_dict = {}
